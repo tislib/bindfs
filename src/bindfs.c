@@ -1021,7 +1021,7 @@ static int bindfs_utimens(const char *path, const struct timespec ts[2])
 #else
 #error "No symlink-compatible utime* function available."
 #endif
- 
+
     free(real_path);
     if (res == -1)
         return -errno;
@@ -1424,6 +1424,9 @@ static void print_usage(const char *progname)
            "Permission bits:\n"
            "  -p      --perms=...       Specify permissions, similar to chmod\n"
            "                            e.g. og-x,og+rD,u=rwX,g+rw  or  0644,a+X\n"
+           "\n"
+           "Ignoring:\n"
+           "  -i      --ignore=...       Specify ignorelist, similar to gitignore\n" 
            "\n"
            "File creation policy:\n"
            "  --create-as-user          New files owned by creator (default for root). *\n"
